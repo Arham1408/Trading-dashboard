@@ -1,0 +1,568 @@
+{
+  "live_positions": [
+    {
+      "symbol": "DRAM",
+      "name": "Roundhill Memory ETF",
+      "quantity": 1.0,
+      "avg_entry_price": 34.6,
+      "currency": "USD",
+      "market": "US",
+      "position_value_sgd": 46.71
+    },
+    {
+      "symbol": "566A",
+      "name": "iFreeETF Bloomberg Japan ex-Financials High Dividend 50 Index",
+      "quantity": 4.0,
+      "avg_entry_price": 2039.0,
+      "currency": "JPY",
+      "market": "JP",
+      "position_value_sgd": 73.77
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "quantity": 3.0,
+      "avg_entry_price": 399.0,
+      "currency": "USD",
+      "market": "US",
+      "position_value_sgd": 1615.95
+    },
+    {
+      "symbol": "221A",
+      "name": "MAXIS Nikkei Semiconductor Stock (Japan) ETF",
+      "quantity": 60.0,
+      "avg_entry_price": 946.5385,
+      "currency": "JPY",
+      "market": "JP",
+      "position_value_sgd": 513.69
+    },
+    {
+      "symbol": "JETS",
+      "name": "U.S. Global Jets ETF",
+      "quantity": 10.0,
+      "avg_entry_price": 28.39,
+      "currency": "USD",
+      "market": "US",
+      "position_value_sgd": 383.26
+    },
+    {
+      "symbol": "MARS",
+      "name": "Roundhill Space & Technology ETF",
+      "quantity": 9.0,
+      "avg_entry_price": 33.74,
+      "currency": "USD",
+      "market": "US",
+      "position_value_sgd": 409.94
+    },
+    {
+      "symbol": "42C",
+      "name": "IX Biopharma",
+      "quantity": 200.0,
+      "avg_entry_price": 0.45,
+      "currency": "SGD",
+      "market": "SG",
+      "position_value_sgd": 89.91
+    },
+    {
+      "symbol": "INTC",
+      "name": "Intel",
+      "quantity": 1.0,
+      "avg_entry_price": 33.7624,
+      "currency": "USD",
+      "market": "US",
+      "position_value_sgd": 45.58
+    },
+    {
+      "symbol": "O39",
+      "name": "OCBC Bank",
+      "quantity": 41.0,
+      "avg_entry_price": 22.3554,
+      "currency": "SGD",
+      "market": "SG",
+      "position_value_sgd": 915.65
+    },
+    {
+      "symbol": "02802",
+      "name": "CSOP HSCEI Covered Call Active ETF",
+      "quantity": 100.0,
+      "avg_entry_price": 8.265,
+      "currency": "HKD",
+      "market": "HK",
+      "position_value_sgd": 142.82
+    },
+    {
+      "symbol": "BCS",
+      "name": "Barclays",
+      "quantity": 24.0,
+      "avg_entry_price": 26.85,
+      "currency": "USD",
+      "market": "US",
+      "position_value_sgd": 869.94
+    },
+    {
+      "symbol": "TAP",
+      "name": "TAP",
+      "quantity": 400.0,
+      "avg_entry_price": 0.295,
+      "currency": "SGD",
+      "market": "SG",
+      "position_value_sgd": 117.88
+    },
+    {
+      "symbol": "UZMW",
+      "name": "Sembcorp 5xLongSG270623",
+      "quantity": 300.0,
+      "avg_entry_price": 0.225,
+      "currency": "SGD",
+      "market": "SG",
+      "position_value_sgd": 67.43
+    }
+  ],
+  "pnl_trades": [
+    {
+      "symbol": "RKLB",
+      "quantity": 11.0,
+      "buy_price": 22.44,
+      "sell_price": 96.5,
+      "pnl": 813.14,
+      "pnl_pct": 327.97,
+      "pnl_sgd": 1097.74,
+      "currency": "USD",
+      "exit_date": "2026-05-08"
+    },
+    {
+      "symbol": "RKLB",
+      "quantity": 12.0,
+      "buy_price": 72.95,
+      "sell_price": 96.5,
+      "pnl": 281.01,
+      "pnl_pct": 32.06,
+      "pnl_sgd": 379.36,
+      "currency": "USD",
+      "exit_date": "2026-05-08"
+    },
+    {
+      "symbol": "RKLB",
+      "quantity": 9.0,
+      "buy_price": 68.3,
+      "sell_price": 96.5,
+      "pnl": 252.93,
+      "pnl_pct": 41.11,
+      "pnl_sgd": 341.46,
+      "currency": "USD",
+      "exit_date": "2026-05-08"
+    },
+    {
+      "symbol": "RKLB",
+      "quantity": 11.0,
+      "buy_price": 68.3,
+      "sell_price": 88.28,
+      "pnl": 217.86,
+      "pnl_pct": 28.95,
+      "pnl_sgd": 294.11,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "INTC",
+      "quantity": 14.0,
+      "buy_price": 24.88,
+      "sell_price": 37.45,
+      "pnl": 173.93,
+      "pnl_pct": 49.78,
+      "pnl_sgd": 234.81,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "RKLB",
+      "quantity": 5.0,
+      "buy_price": 53.89,
+      "sell_price": 88.28,
+      "pnl": 170.68,
+      "pnl_pct": 63.13,
+      "pnl_sgd": 230.41,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "DRAM",
+      "quantity": 14.0,
+      "buy_price": 34.6,
+      "sell_price": 46.8,
+      "pnl": 168.58,
+      "pnl_pct": 34.73,
+      "pnl_sgd": 227.58,
+      "currency": "USD",
+      "exit_date": "2026-05-07"
+    },
+    {
+      "symbol": "RKLX",
+      "quantity": 19.0,
+      "buy_price": 37.5,
+      "sell_price": 44.5,
+      "pnl": 130.95,
+      "pnl_pct": 18.35,
+      "pnl_sgd": 176.78,
+      "currency": "USD",
+      "exit_date": "2026-05-08"
+    },
+    {
+      "symbol": "LUNR",
+      "quantity": 5.0,
+      "buy_price": 10.8,
+      "sell_price": 20.72,
+      "pnl": 48.39,
+      "pnl_pct": 87.81,
+      "pnl_sgd": 65.32,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "RKLX",
+      "quantity": 6.0,
+      "buy_price": 36.3,
+      "sell_price": 44.5,
+      "pnl": 47.81,
+      "pnl_pct": 21.84,
+      "pnl_sgd": 64.55,
+      "currency": "USD",
+      "exit_date": "2026-05-08"
+    },
+    {
+      "symbol": "EWY",
+      "quantity": 6.0,
+      "buy_price": 141.2,
+      "sell_price": 149.2,
+      "pnl": 45.77,
+      "pnl_pct": 5.4,
+      "pnl_sgd": 61.79,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "INTC",
+      "quantity": 19.0,
+      "buy_price": 44.58,
+      "sell_price": 46.53,
+      "pnl": 34.8,
+      "pnl_pct": 4.1,
+      "pnl_sgd": 46.98,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "LAC",
+      "quantity": 40.0,
+      "buy_price": 5.08,
+      "sell_price": 5.95,
+      "pnl": 32.37,
+      "pnl_pct": 15.84,
+      "pnl_sgd": 43.7,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "LUNR",
+      "quantity": 15.0,
+      "buy_price": 16.89,
+      "sell_price": 19.14,
+      "pnl": 31.95,
+      "pnl_pct": 12.56,
+      "pnl_sgd": 43.13,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "INTC",
+      "quantity": 5.0,
+      "buy_price": 19.91,
+      "sell_price": 25.04,
+      "pnl": 23.8,
+      "pnl_pct": 23.69,
+      "pnl_sgd": 32.13,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "LUNR",
+      "quantity": 10.0,
+      "buy_price": 18.5,
+      "sell_price": 20.72,
+      "pnl": 20.83,
+      "pnl_pct": 11.19,
+      "pnl_sgd": 28.12,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "SMCL",
+      "quantity": 100.0,
+      "buy_price": 2.43,
+      "sell_price": 2.62,
+      "pnl": 16.65,
+      "pnl_pct": 6.81,
+      "pnl_sgd": 22.48,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "SMCI",
+      "quantity": 1.0,
+      "buy_price": 27.21,
+      "sell_price": 38.05,
+      "pnl": 8.66,
+      "pnl_pct": 30.61,
+      "pnl_sgd": 11.69,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "LUNR",
+      "quantity": 11.0,
+      "buy_price": 18.5,
+      "sell_price": 19.14,
+      "pnl": 5.95,
+      "pnl_pct": 2.92,
+      "pnl_sgd": 8.03,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "OWL",
+      "quantity": 22.0,
+      "buy_price": 10.0,
+      "sell_price": 10.35,
+      "pnl": 5.36,
+      "pnl_pct": 2.42,
+      "pnl_sgd": 7.24,
+      "currency": "USD",
+      "exit_date": "2026-05-07"
+    },
+    {
+      "symbol": "LUNR",
+      "quantity": 20.0,
+      "buy_price": 18.92,
+      "sell_price": 19.17,
+      "pnl": 2.7,
+      "pnl_pct": 0.71,
+      "pnl_sgd": 3.64,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "PHUN",
+      "quantity": 6.0,
+      "buy_price": 7.3,
+      "sell_price": 7.94,
+      "pnl": 1.63,
+      "pnl_pct": 3.64,
+      "pnl_sgd": 2.2,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "LUNR",
+      "quantity": 4.0,
+      "buy_price": 18.45,
+      "sell_price": 19.14,
+      "pnl": 1.4,
+      "pnl_pct": 1.87,
+      "pnl_sgd": 1.89,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "S58",
+      "quantity": 27.0,
+      "buy_price": 3.29,
+      "sell_price": 3.39,
+      "pnl": -0.4,
+      "pnl_pct": -0.44,
+      "pnl_sgd": -0.4,
+      "currency": "SGD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "INTC",
+      "quantity": 1.0,
+      "buy_price": 24.88,
+      "sell_price": 25.04,
+      "pnl": -1.16,
+      "pnl_pct": -4.45,
+      "pnl_sgd": -1.56,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "EVS",
+      "quantity": 270.0,
+      "buy_price": 0.65,
+      "sell_price": 0.66,
+      "pnl": -2.04,
+      "pnl_pct": -1.15,
+      "pnl_sgd": -2.04,
+      "currency": "SGD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "BMEZ",
+      "quantity": 4.0,
+      "buy_price": 14.66,
+      "sell_price": 14.73,
+      "pnl": -1.91,
+      "pnl_pct": -3.19,
+      "pnl_sgd": -2.57,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "221A",
+      "quantity": 10.0,
+      "buy_price": 977.9,
+      "sell_price": 970.0,
+      "pnl": -289.21,
+      "pnl_pct": -2.91,
+      "pnl_sgd": -2.62,
+      "currency": "JPY",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "QMCO",
+      "quantity": 10.0,
+      "buy_price": 9.12,
+      "sell_price": 9.05,
+      "pnl": -2.93,
+      "pnl_pct": -3.17,
+      "pnl_sgd": -3.95,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "FUBO",
+      "quantity": 9.0,
+      "buy_price": 4.81,
+      "sell_price": 4.57,
+      "pnl": -4.39,
+      "pnl_pct": -9.89,
+      "pnl_sgd": -5.93,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "INTC",
+      "quantity": 1.0,
+      "buy_price": 44.58,
+      "sell_price": 37.45,
+      "pnl": -8.34,
+      "pnl_pct": -18.24,
+      "pnl_sgd": -11.26,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "EWG",
+      "quantity": 10.0,
+      "buy_price": 42.08,
+      "sell_price": 41.2,
+      "pnl": -10.98,
+      "pnl_pct": -2.6,
+      "pnl_sgd": -14.82,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "GSAT",
+      "quantity": 3.0,
+      "buy_price": 78.2,
+      "sell_price": 75.01,
+      "pnl": -11.02,
+      "pnl_pct": -4.67,
+      "pnl_sgd": -14.88,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "221A",
+      "quantity": 60.0,
+      "buy_price": 989.2,
+      "sell_price": 970.0,
+      "pnl": -1759.29,
+      "pnl_pct": -2.95,
+      "pnl_sgd": -15.91,
+      "currency": "JPY",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "SANA",
+      "quantity": 10.0,
+      "buy_price": 4.59,
+      "sell_price": 3.33,
+      "pnl": -14.81,
+      "pnl_pct": -31.53,
+      "pnl_sgd": -20.0,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "RKLB",
+      "quantity": 1.0,
+      "buy_price": 53.89,
+      "sell_price": 32.45,
+      "pnl": -22.64,
+      "pnl_pct": -41.17,
+      "pnl_sgd": -30.57,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "LAC",
+      "quantity": 30.0,
+      "buy_price": 7.7,
+      "sell_price": 6.47,
+      "pnl": -39.22,
+      "pnl_pct": -16.89,
+      "pnl_sgd": -52.95,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "SMCI",
+      "quantity": 7.0,
+      "buy_price": 55.1,
+      "sell_price": 30.39,
+      "pnl": -175.22,
+      "pnl_pct": -45.3,
+      "pnl_sgd": -236.54,
+      "currency": "USD",
+      "exit_date": "N/A"
+    },
+    {
+      "symbol": "RKLB",
+      "quantity": 10.0,
+      "buy_price": 49.78,
+      "sell_price": 32.45,
+      "pnl": -175.4,
+      "pnl_pct": -35.16,
+      "pnl_sgd": -236.79,
+      "currency": "USD",
+      "exit_date": "N/A"
+    }
+  ],
+  "summary": {
+    "total_transactions": 76,
+    "cancelled_count": 11,
+    "failed_count": 13,
+    "live_positions_count": 13,
+    "completed_trades_count": 39,
+    "total_realized_pnl_sgd": 2772.35,
+    "total_invested_sgd": 20085.24,
+    "portfolio_balance_sgd": 22857.59,
+    "exchange_rates": {
+      "USD": 1.0,
+      "JPY": 0.0067,
+      "HKD": 0.128,
+      "SGD": 0.74
+    }
+  }
+}
