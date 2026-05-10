@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .upload-section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .upload-section label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .file-input-wrapper {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        button {
+            padding: 10px 24px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #5568d3;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        #content {
+            display: none;
+            padding: 30px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .metric-card label {
+            display: block;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-card .value {
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 12px;
+        }
+
+        .currency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .currency-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .currency-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #667eea;
+        }
+
+        .currency-card p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .currency-card .amount {
+            color: #333;
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: #f8f9fa;
+        }
+
+        th {
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            color: #666;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 13px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .positive {
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        .negative {
+            color: #dc3545;
+            font-weight: 500;
+        }
+
+        .error {
+            color: #dc3545;
+            padding: 16px;
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .success {
+            color: #155724;
+            padding: 16px;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .button-secondary {
+            background: #6c757d;
+        }
+
+        .button-secondary:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📈 Trading Dashboard</h1>
+            <p>Analyze your moomoo trades by currency, capital allocation, and returns</p>
+        </div>
+
+        <div class="upload-section">
+            <label>📊 Load Your Trading Data:</label>
+            <div class="file-input-wrapper">
+                <input type="file" id="csvFile" accept=".csv">
+                <button onclick="handleFileSelect()">Upload CSV</button>
+            </div>
+            <p style="font-size: 12px; color: #666; margin-top: 8px;">
+                💡 Select your <code>trades.csv</code> file to analyze
+            </p>
+        </div>
+
+        <div id="content"></div>
+    </div>
+
+    <script>
+        const exchangeRates = {
+            'USD': 1.35,
+            'SGD': 1,
+            'HKD': 0.17,
+            'JPY': 0.0092,
+            'INR': 0.016,
+            'EUR': 1.48,
+            'GBP': 1.71
+        };
+
+        function handleFileSelect() {
+            const file = document.getElementById('csvFile').files[0];
+            if (!file) {
+                alert('Please select a CSV file');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                try {
+                    const csv = event.target.result;
+                    const trades = parseCSV(csv);
+                    analyzeTrades(trades);
+                    document.getElementById('content').style.display = 'block';
+                } catch (error) {
+                    const contentDiv = document.getElementById('content');
+                    contentDiv.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+                    contentDiv.style.display = 'block';
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function parseCSV(csv) {
+            const lines = csv.split('\n');
+            const headers = lines[0].split(',').map(h => h.trim().replace(/"/g, ''));
+            const trades = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                if (!lines[i].trim()) continue;
+                const values = lines[i].split(',').map(v => v.trim().replace(/"/g, ''));
+                const obj = {};
+                headers.forEach((h, idx) => obj[h] = values[idx]);
+                trades.push(obj);
+            }
+            return trades;
+        }
+
+        function analyzeTrades(trades) {
+            const filledTrades = trades.filter(t => t.status === 'Filled');
+            let currencyMap = {};
+            let totalCapital = 0;
+            let totalFees = 0;
+            let exitedPositions = [];
+
+            filledTrades.forEach(t => {
+                const currency = t.currency || 'USD';
+                const qty = parseFloat(t.order_qty) || 0;
+                const price = parseFloat(t.order_price) || 0;
+                const capital = qty * price;
+                const fees = parseFloat(t.fees) || 0;
+                
+                if (!currencyMap[currency]) {
+                    currencyMap[currency] = { capital: 0, trades: 0, fees: 0 };
+                }
+                currencyMap[currency].capital += capital;
+                currencyMap[currency].trades += 1;
+                currencyMap[currency].fees += fees;
+                totalCapital += capital;
+                totalFees += fees;
+            });
+
+            const symbolTrades = {};
+            filledTrades.forEach(t => {
+                const sym = t.symbol;
+                if (!symbolTrades[sym]) symbolTrades[sym] = { buys: [], sells: [] };
+                if (t.side === 'Buy') symbolTrades[sym].buys.push(t);
+                else if (t.side === 'Sell') symbolTrades[sym].sells.push(t);
+            });
+
+            Object.keys(symbolTrades).forEach(sym => {
+                const buys = symbolTrades[sym].buys;
+                const sells = symbolTrades[sym].sells;
+                
+                if (buys.length > 0 && sells.length > 0) {
+                    const avgBuyPrice = buys.reduce((s, b) => s + (parseFloat(b.fill_price) || 0), 0) / buys.length;
+                    const avgSellPrice = sells.reduce((s, s2) => s + (parseFloat(s2.fill_price) || 0), 0) / sells.length;
+                    const returnPct = ((avgSellPrice - avgBuyPrice) / avgBuyPrice * 100);
+                    const totalBuyQty = buys.reduce((s, b) => s + (parseFloat(b.fill_qty) || 0), 0);
+                    const returnAmount = totalBuyQty * (avgSellPrice - avgBuyPrice);
+                    
+                    exitedPositions.push({ 
+                        sym, 
+                        avgBuyPrice, 
+                        avgSellPrice, 
+                        returnPct,
+                        returnAmount
+                    });
+                }
+            });
+
+            renderDashboard(filledTrades.length, totalCapital, totalFees, currencyMap, exitedPositions);
+        }
+
+        function renderDashboard(totalTrades, totalCapital, totalFees, currencyMap, exitedPositions) {
+            const contentDiv = document.getElementById('content');
+            
+            const netReturn = exitedPositions.reduce((sum, p) => sum + p.returnAmount, 0);
+
+            let html = `
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <label>Total Trades</label>
+                        <div class="value">${totalTrades}</div>
+                    </div>
+                    <div class="metric-card">
+                        <label>Total Capital</label>
+                        <div class="value">$${formatNumber(totalCapital)}</div>
+                    </div>
+                    <div class="metric-card">
+                        <label>Total Fees</label>
+                        <div class="value">$${formatNumber(totalFees, 2)}</div>
+                    </div>
+                    <div class="metric-card">
+                        <label>Net Return (Exited)</label>
+                        <div class="value ${netReturn >= 0 ? 'positive' : 'negative'}">
+                            ${netReturn >= 0 ? '+' : ''}$${formatNumber(netReturn)}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>💱 Currency Breakdown</h2>
+                    <div class="currency-grid">
+            `;
+
+            Object.keys(currencyMap).forEach(curr => {
+                const data = currencyMap[curr];
+                html += `
+                    <div class="currency-card">
+                        <h3>${curr}</h3>
+                        <p>Capital: <span class="amount">$${formatNumber(data.capital)}</span></p>
+                        <p>Trades: <span class="amount">${data.trades}</span></p>
+                        <p>Fees: <span class="amount">$${formatNumber(data.fees, 2)}</span></p>
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>💰 Capital in SGD (Singapore Dollar)</h2>
+                    <div class="currency-grid">
+            `;
+
+            Object.keys(currencyMap).forEach(curr => {
+                const sgdAmount = currencyMap[curr].capital * (exchangeRates[curr] || 1);
+                html += `
+                    <div class="currency-card">
+                        <h3>${curr} → SGD</h3>
+                        <p>Amount: <span class="amount">SGD ${formatNumber(sgdAmount)}</span></p>
+                    </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>📊 Exited Positions & Returns</h2>
+            `;
+
+            if (exitedPositions.length === 0) {
+                html += `<p style="color: #666;">No exited positions found (need both buy and sell trades for same symbol)</p>`;
+            } else {
+                html += `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Avg Buy Price</th>
+                                <th>Avg Sell Price</th>
+                                <th>Return %</th>
+                                <th>Return Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                exitedPositions.forEach(pos => {
+                    const returnClass = pos.returnPct >= 0 ? 'positive' : 'negative';
+                    html += `
+                        <tr>
+                            <td><strong>${pos.sym}</strong></td>
+                            <td>$${pos.avgBuyPrice.toFixed(2)}</td>
+                            <td>$${pos.avgSellPrice.toFixed(2)}</td>
+                            <td class="${returnClass}">${pos.returnPct >= 0 ? '+' : ''}${pos.returnPct.toFixed(2)}%</td>
+                            <td class="${returnClass}">${pos.returnAmount >= 0 ? '+' : ''}$${formatNumber(pos.returnAmount)}</td>
+                        </tr>
+                    `;
+                });
+
+                html += `
+                        </tbody>
+                    </table>
+                `;
+            }
+
+            html += `</div>`;
+
+            contentDiv.innerHTML = html;
+        }
+
+        function formatNumber(num, decimals = 0) {
+            const multiplier = Math.pow(10, decimals);
+            return Math.round(num * multiplier) / multiplier;
+        }
+
+        document.getElementById('csvFile').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') handleFileSelect();
+        });
+    </script>
+</body>
+</html>
